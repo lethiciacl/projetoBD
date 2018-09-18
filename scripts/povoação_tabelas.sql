@@ -2,67 +2,67 @@
 
 /*responsáveis*/
 INSERT INTO pessoa(nome,cpf,senha,identidade,dataNascimento,sexo,endereco)
-VALUES('Ana Rodrigues','947.564.740-63','gDNyZQXL','34.642.816-6','02/10/1988','feminino','Cajazeiras - Paraíba, Brasil');
+VALUES('Ana Rodrigues','947.564.740-63','gDNyZQXL','34.642.816-6','10/02/1988','feminino','Cajazeiras - Paraíba, Brasil');
 
 INSERT INTO pessoa(nome,cpf,senha,identidade,dataNascimento,sexo,endereco)
-VALUES('Beatriz Pereira','816.582.500-36','FkT8D2Je','38.045.510-9','07/04/1985','feminino','Cajazeiras - Paraíba, Brasil');
+VALUES('Beatriz Pereira','816.582.500-36','FkT8D2Je','38.045.510-9','04/07/1985','feminino','Cajazeiras - Paraíba, Brasil');
 
 INSERT INTO pessoa(nome,cpf,senha,identidade,dataNascimento,sexo,endereco)
-VALUES('Antonella Fernandes','455.270.350-11','UkRp9t2G','39.900.321-6','12/23/1979','feminino','Cajazeiras - Paraíba, Brasil');
+VALUES('Antonella Fernandes','455.270.350-11','UkRp9t2G','39.900.321-6','23/12/1979','feminino','Cajazeiras - Paraíba, Brasil');
 
 INSERT INTO pessoa(nome,cpf,senha,identidade,dataNascimento,sexo,endereco)
-VALUES('Matheus Ricardo Almada','492.332.324-84','DLqdK7xeNG','48.684.360-9','02/21/1996','masculino','Cajazeiras - Paraíba, Brasil');
+VALUES('Matheus Ricardo Almada','492.332.324-84','DLqdK7xeNG','48.684.360-9','21/02/1996','masculino','Cajazeiras - Paraíba, Brasil');
 
 INSERT INTO pessoa(nome,cpf,senha,identidade,dataNascimento,sexo,endereco)
-VALUES('Theo Henry Campos','829.340.194-03', 'RoMI1LhQPn','35.940.274-4','11/06/1992','masculino','Cajazeiras - Paraíba, Brasil');
+VALUES('Theo Henry Campos','829.340.194-03', 'RoMI1LhQPn','35.940.274-4','06/11/1992','masculino','Cajazeiras - Paraíba, Brasil');
 
 /*professores*/
 INSERT INTO pessoa(nome,cpf,senha,identidade,dataNascimento,sexo,endereco)
 VALUES('Jennifer Amanda Porto','974.336.374-27', 'Ajh5W9Rrpm', '19.067.861-6', '12/12/1981', 'feminino', 'Sousa - Paraíba, Brasil');
 
 INSERT INTO pessoa(nome,cpf,senha,identidade,dataNascimento,sexo,endereco)
-VALUES('Henry Murilo Raul de Paula', '490.437.174-79', 'CM9gJC6huG', '13.096.888-2', '11/09/1985', 'masculino', 'Sousa - Paraíba, Brasil');
+VALUES('Henry Murilo Raul de Paula', '490.437.174-79', 'CM9gJC6huG', '13.096.888-2', '09/11/1985', 'masculino', 'Sousa - Paraíba, Brasil');
 
 INSERT INTO pessoa(nome,cpf,senha,identidade,dataNascimento,sexo,endereco)
-VALUES('Vitor Guilherme Moura', '979.536.644-02', 'QhgLRfwnHa', '38.528.504-8','10/03/1985','masculino', 'Sousa - Paraíba, Brasil');
+VALUES('Vitor Guilherme Moura', '979.536.644-02', 'QhgLRfwnHa', '38.528.504-8','03/10/1985','masculino', 'Sousa - Paraíba, Brasil');
 
 INSERT INTO pessoa(nome,cpf,senha,identidade,dataNascimento,sexo,endereco)
-VALUES('Mariana Fernanda Souza','725.430.454-73','EdO1twUIxx','24.860.270-6','02/20/1988','feminino','Sousa - Paraíba, Brasil');
+VALUES('Mariana Fernanda Souza','725.430.454-73','EdO1twUIxx','24.860.270-6','20/02/1988','feminino','Sousa - Paraíba, Brasil');
 
 INSERT INTO pessoa(nome,cpf,senha,identidade,dataNascimento,sexo,endereco)
-VALUES('Augusto Mário Almada','421.019.024-19','wG2PWATc6Y','10.088.219-5','12/20/1988','masculino','Sousa - Paraíba, Brasil');
+VALUES('Augusto Mário Almada','421.019.024-19','wG2PWATc6Y','10.088.219-5','20/12/1988','masculino','Sousa - Paraíba, Brasil');
 
 /*administrador*/
 INSERT INTO pessoa(nome,cpf,senha,identidade,dataNascimento,sexo,endereco)
-VALUES('Maitê Duarte','071.053.094-31','hexiL6ltSq','40.368.856-5','01/19/1968','feminino','Pombal - Paraíba, Brasil');
+VALUES('Maitê Duarte','071.053.094-31','hexiL6ltSq','40.368.856-5','19/01/1968','feminino','Pombal - Paraíba, Brasil');
 
 INSERT INTO pessoa(nome,cpf,senha,identidade,dataNascimento,sexo,endereco)
-VALUES('Raimunda Nogueira','140.261.534-52','taZ40aHcln','28.267.872-4','01/24/1960','feminino','Pombal - Paraíba, Brasil');
+VALUES('Raimunda Nogueira','140.261.534-52','taZ40aHcln','28.267.872-4','24/01/1960','feminino','Pombal - Paraíba, Brasil');
 
 INSERT INTO pessoa(nome,cpf,senha,identidade,dataNascimento,sexo,endereco)
-VALUES('Alessandra Nascimento','866.110.874-86','wWjo9OyKRq','16.326.035-7','06/26/1972','feminino','Pombal - Paraíba, Brasil');
+VALUES('Alessandra Nascimento','866.110.874-86','wWjo9OyKRq','16.326.035-7','26/06/1972','feminino','Pombal - Paraíba, Brasil');
 
 INSERT INTO pessoa(nome,cpf,senha,identidade,dataNascimento,sexo,endereco)
-VALUES('Joaquim Assis','591.310.934-18','mmaKhkhslc','35.784.148-7','03/02/1979','masculino','Pombal - Paraíba, Brasil');
+VALUES('Joaquim Assis','591.310.934-18','mmaKhkhslc','35.784.148-7','02/03/1979','masculino','Pombal - Paraíba, Brasil');
 
 INSERT INTO pessoa(nome,cpf,senha,identidade,dataNascimento,sexo,endereco)
-VALUES('Oliver Santos','561.077.524-80','0SJW6RarF6','44.583.476-6','12/27/1981','masculino','Pombal - Paraíba, Brasil');
+VALUES('Oliver Santos','561.077.524-80','0SJW6RarF6','44.583.476-6','27/12/1981','masculino','Pombal - Paraíba, Brasil');
 
 /*aluno*/
 INSERT INTO pessoa(nome,cpf,senha,identidade,dataNascimento,sexo,endereco)
-VALUES('Estella Costa', '537.759.154-27', 'LcfswMbUMi','31.584.762-1','09/25/2003','feminino','Cajazeiras - Paraíba, Brasil');
+VALUES('Estella Costa', '537.759.154-27', 'LcfswMbUMi','31.584.762-1','25/09/2003','feminino','Cajazeiras - Paraíba, Brasil');
 
 INSERT INTO pessoa(nome,cpf,senha,identidade,dataNascimento,sexo,endereco)
-VALUES('Luana Souza','003.962.124-33','pB6tERtui5','24.046.447-3','11/01/2005','feminino','Cajazeiras - Paraíba, Brasil');
+VALUES('Luana Souza','003.962.124-33','pB6tERtui5','24.046.447-3','01/11/2005','feminino','Cajazeiras - Paraíba, Brasil');
 
 INSERT INTO pessoa(nome,cpf,senha,identidade,dataNascimento,sexo,endereco)
-VALUES('Carlos','963.234.750-14','5cxuHnEM','39.871.131-8','01/14/2005','masculino','Cajazeiras - Paraíba, Brasil');
+VALUES('Carlos','963.234.750-14','5cxuHnEM','39.871.131-8','14/01/2005','masculino','Cajazeiras - Paraíba, Brasil');
 
 INSERT INTO pessoa(nome,cpf,senha,identidade,dataNascimento,sexo,endereco)
-VALUES('Daniel','358.595.280-19','txzeMrNt','47.919.186-4','03/10/2005','masculino','Cajazeiras - Paraíba, Brasil');
+VALUES('Daniel','358.595.280-19','txzeMrNt','47.919.186-4','10/03/2005','masculino','Cajazeiras - Paraíba, Brasil');
 
 INSERT INTO pessoa(nome,cpf,senha,identidade,dataNascimento,sexo,endereco)
-VALUES('Ellen','236.717.500-49','ubhKs5Wy','26.190.992-7','08/19/2003','feminino','Cajazeiras - Paraíba, Brasil');
+VALUES('Ellen','236.717.500-49','ubhKs5Wy','26.190.992-7','19/08/2003','feminino','Cajazeiras - Paraíba, Brasil');
 
 /*responsável*/
 
@@ -119,25 +119,25 @@ VALUES('421.019.024-19','2018120005','doutorado');
 /*acontecimento*/
 
 INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
-VALUES('#001','Dia das Mães','05/13/2018','17:30','21:00','Ginásio');
+VALUES('#001','Dia das Mães','13/05/2018','17:30','21:00','Ginásio');
 INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
 VALUES('#002','Dia dos Pais','08/08/2018','18:00','22:00','Ginásio');
 INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
-VALUES('#003','Dia do Estudante','08/11/2018','10:45','11:45','Ginásio');
+VALUES('#003','Dia do Estudante','11/08/2018','10:45','11:45','Ginásio');
 INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
-VALUES('#004','Natal','12/22/2018','18:00','20:00','Praça Padre Rolim');
+VALUES('#004','Natal','22/12/2018','18:00','20:00','Praça Padre Rolim');
 INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
-VALUES('#005','Dia dos Professores','10/14/2018','19:00','23:00','Ginásio');
+VALUES('#005','Dia dos Professores','14/10/2018','19:00','23:00','Ginásio');
 INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
-VALUES('#006','Avaliação de Matemática','09/13/2018','11:00','12:05','Sala-01');
+VALUES('#006','Avaliação de Matemática','13/09/2018','11:00','12:05','Sala-01');
 INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
-VALUES('#007','Avaliação de Português','09/18/2018','07:00','09:15','Sala-02');
+VALUES('#007','Avaliação de Português','18/09/2018','07:00','09:15','Sala-02');
 INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
-VALUES('#008','Avaliação de Geografia', '09/20/2018','08:30','09:15','Sala-01');
+VALUES('#008','Avaliação de Geografia', '20/09/2018','08:30','09:15','Sala-01');
 INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
-VALUES('#009','Avaliação de Inglês','09/12/2018','09:30','11:00','Sala-02');
+VALUES('#009','Avaliação de Inglês','12/09/2018','09:30','11:00','Sala-02');
 INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
-VALUES('#010','Avaliação de Espanhol','09/14/2018','10:45','12:05','Sala 01');
+VALUES('#010','Avaliação de Espanhol','14/09/2018','10:45','12:05','Sala 01');
 
 /*turma*/
 
@@ -155,15 +155,15 @@ VALUES('#B005','1B-EM', 'Sala 05');
 /*trimestre*/
 
 INSERT INTO trimestre(ano, numero, dataInicio, dataFim)
-VALUES(2018,2,'05/09/2018','09/11/2018');
+VALUES(2018,2,'05/09/2018','11/09/2018');
 INSERT INTO trimestre(ano, numero, dataInicio, dataFim)
-VALUES(2018,1,'01/22/2018','05/08/2018');
+VALUES(2018,1,'22/01/2018','08/05/2018');
 INSERT INTO trimestre(ano, numero, dataInicio, dataFim)
-VALUES(2018,3,'09/12/2018','12/07/2018');
+VALUES(2018,3,'09/12/2018','07/12/2018');
 INSERT INTO trimestre(ano, numero, dataInicio, dataFim)
-VALUES(2019,1,'01/21/2019','05/07/2018');
+VALUES(2019,1,'21/01/2019','07/05/2018');
 INSERT INTO trimestre(ano, numero, dataInicio, dataFim)
-VALUES(2019,2,'05/08/2019','09/10/2019');
+VALUES(2019,2,'05/08/2019','10/09/2019');
 
 /*organizatrimestre*/
 
@@ -204,15 +204,15 @@ VALUES('829.340.194-03','#D010','Amor não é sentimento... Amor é uma promessa
 /*compartilhamensagem*/
 
 INSERT INTO compartilhamensagem(cpfEnvia,cpfRecebe,codMensagem,visibilidade,dataHoraEnvio,dataHoraVisualizacao)
-VALUES('947.564.740-63','236.717.500-49','#D001',FALSE,'10/11/2018 11:29:29','10/11/2018 13:47:34');
+VALUES('947.564.740-63','236.717.500-49','#D001',FALSE,'11/10/2018 11:29:29','11/10/2018 13:47:34');
 INSERT INTO compartilhamensagem(cpfEnvia,cpfRecebe,codMensagem,visibilidade,dataHoraEnvio,dataHoraVisualizacao)
-VALUES('974.336.374-27','490.437.174-79','#D002',FALSE,'10/12/2018 15:11:23','10/12/2018 17:20:00');
+VALUES('974.336.374-27','490.437.174-79','#D002',FALSE,'12/10/2018 15:11:23','12/10/2018 17:20:00');
 INSERT INTO compartilhamensagem(cpfEnvia,cpfRecebe,codMensagem,visibilidade,dataHoraEnvio,dataHoraVisualizacao)
-VALUES('071.053.094-31','591.310.934-18','#D003',FALSE,'10/13/2018 16:00:02','10/13/2018 18:59:37');
+VALUES('071.053.094-31','591.310.934-18','#D003',FALSE,'13/10/2018 16:00:02','13/10/2018 18:59:37');
 INSERT INTO compartilhamensagem(cpfEnvia,cpfRecebe,codMensagem,visibilidade,dataHoraEnvio,dataHoraVisualizacao)
-VALUES('140.261.534-52','963.234.750-14','#D004',FALSE,'10/14/2018 09:45:36','10/14/2018 09:47:11');
+VALUES('140.261.534-52','963.234.750-14','#D004',FALSE,'14/10/2018 09:45:36','14/10/2018 09:47:11');
 INSERT INTO compartilhamensagem(cpfEnvia,cpfRecebe,codMensagem,visibilidade,dataHoraEnvio,dataHoraVisualizacao)
-VALUES('358.595.280-19','829.340.194-03','#D005',FALSE,'10/15/2018 07:43:34','10/15/2018 08:53:11');
+VALUES('358.595.280-19','829.340.194-03','#D005',FALSE,'15/10/2018 07:43:34','15/10/2018 08:53:11');
 
 /*respondemensagem*/
 

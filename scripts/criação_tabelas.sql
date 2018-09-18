@@ -37,7 +37,7 @@ CREATE TABLE administrador(
 
 CREATE TABLE professor(
 	cpf VARCHAR (20),
-	matricula VARCHAR (32) NOT NULL,
+	matricula VARCHAR (32) NOT NULL UNIQUE,
 	titulacao VARCHAR (100) NOT NULL,
 	CONSTRAINT prof_pk PRIMARY KEY (cpf),
  	CONSTRAINT prof_fk FOREIGN KEY (cpf) REFERENCES pessoa(cpf)
@@ -84,7 +84,7 @@ CREATE TABLE diario(
 	codTurma VARCHAR(32) NOT NULL, 
 	codDisciplina VARCHAR(32) NOT NULL, 
 	CONSTRAINT diario_pk PRIMARY KEY(codDiario),
- 	CONSTRAINT matProf_fk FOREIGN KEY(matProf) REFERENCES Professor(cpf), 
+ 	CONSTRAINT matProf_fk FOREIGN KEY(matProf) REFERENCES Professor(matricula), 
 	CONSTRAINT codTurma_fk FOREIGN KEY(codTurma) REFERENCES turma(codTurma),
 	CONSTRAINT codDisciplina_fk FOREIGN KEY (codDisciplina) REFERENCES disciplina(codDisciplina) 
 );
