@@ -200,6 +200,8 @@ INSERT INTO mensagem(cpf,codMensagem,texto)
 VALUES('963.234.750-14','#D009','Algumas coisas valem a pena, mesmo que partam seu coração.');
 INSERT INTO mensagem(cpf,codMensagem,texto)
 VALUES('829.340.194-03','#D010','Amor não é sentimento... Amor é uma promessa.');
+INSERT INTO mensagem(cpf,codMensagem,texto)
+VALUES('071.053.094-31','#D011','A aluna Maité Duarte apresentou compormatemento inadequado durante a aula.');
 
 /*compartilhamensagem*/
 
@@ -213,6 +215,11 @@ INSERT INTO compartilhamensagem(cpfEnvia,cpfRecebe,codMensagem,visibilidade,data
 VALUES('140.261.534-52','963.234.750-14','#D004',FALSE,'14/10/2018 09:45:36','14/10/2018 09:47:11');
 INSERT INTO compartilhamensagem(cpfEnvia,cpfRecebe,codMensagem,visibilidade,dataHoraEnvio,dataHoraVisualizacao)
 VALUES('358.595.280-19','829.340.194-03','#D005',FALSE,'15/10/2018 07:43:34','15/10/2018 08:53:11');
+INSERT INTO compartilhamensagem(cpfEnvia,cpfRecebe,codMensagem,visibilidade,dataHoraEnvio,dataHoraVisualizacao)
+VALUES('071.053.094-31','947.564.740-63','#D011',FALSE,'10/09/2018 07:43:34',null);
+INSERT INTO compartilhamensagem(cpfEnvia,cpfRecebe,codMensagem,visibilidade,dataHoraEnvio,dataHoraVisualizacao)
+VALUES('829.340.194-03','816.582.500-36','#D010',FALSE,'20/09/2018 07:43:34','20/09/2018 08:43:34');
+
 
 /*respondemensagem*/
 
@@ -360,13 +367,13 @@ VALUES('003.962.124-33','(83)8739-5343');
 
 /*telefoneresponsavel*/
 
-INSERT INTO telefonepessoa(cpf,telefone)
+INSERT INTO telefoneresponsavel(cpf,telefone)
 VALUES('947.564.740-63','(83)9954-3695');
-INSERT INTO telefonepessoa(cpf,telefone)
-VALUES('816.582.500-36','(83)9876-6013');
-INSERT INTO telefonepessoa(cpf,telefone)
-VALUES('455.270.350-11','(83)4209-2929');
-INSERT INTO telefonepessoa(cpf,telefone)
+INSERT INTO telefoneresponsavel(cpf,telefone)
+VALUES('947.564.740-63','(83)9876-6013');
+INSERT INTO telefoneresponsavel(cpf,telefone)
+VALUES('816.582.500-36','(83)4209-2929');
+INSERT INTO telefoneresponsavel(cpf,telefone)
 VALUES('492.332.324-84','(83)5797-2984');
-INSERT INTO telefonepessoa(cpf,telefone)
+INSERT INTO telefoneresponsavel(cpf,telefone)
 VALUES('829.340.194-03','(83)8739-5493');

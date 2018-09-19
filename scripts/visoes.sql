@@ -1,5 +1,5 @@
 /*Visão da jução natura entre professor e pessoa*/
-CREATE VIEW VisaoProfesorPessoa 
+CREATE VIEW VisaoProfessorPessoa 
 AS SELECT *
 FROM professor NATURAL LEFT JOIN pessoa;
 
@@ -17,3 +17,13 @@ FROM administrador NATURAL LEFT JOIN pessoa;
 CREATE VIEW VisaoResponsavelPessoa 
 AS SELECT *
 FROM responsavel NATURAL LEFT JOIN pessoa;
+
+/*Visão de junção natural entre evento e acontecimento*/
+CREATE VIEW VisaoEvento
+AS SELECT *
+FROM evento NATURAL LEFT JOIN acontecimento;
+
+/*Visão de junção natural entre avaliacao e acontecimeno*/
+CREATE VIEW VisaoAvaliacao
+AS SELECT *
+FROM avaliacao NATURAL LEFT JOIN acontecimento;
