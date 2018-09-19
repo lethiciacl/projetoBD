@@ -2,10 +2,10 @@
 CREATE INDEX codacontindice ON acontecimento(codacontecimento);
 CREATE INDEX cpfindice ON administrador(cpf);
 CREATE INDEX cpfalunoindice ON aluno(cpf);
-CREATE INDEX coddiarioindice ON avaliacao(coddiario);
+CREATE INDEX codavaliaindice ON avaliacao(coddiario);
 CREATE INDEX numeroindice ON avaliacao(numero);
 CREATE INDEX codmensagemindice ON compartilhamensagem(codmensagem);
-CREATE INDEX codacontindice ON conteudoavaliacao(codacontecimento);
+CREATE INDEX codacontavalindice ON conteudoavaliacao(codacontecimento);
 CREATE INDEX coddiarioindice ON diario(coddiario);
 CREATE INDEX coddiscindice ON disciplina(coddisciplina);
 CREATE INDEX emailpessindice ON emailpessoa(cpf);
@@ -25,5 +25,3 @@ CREATE INDEX telpesstelindice ON telefonepessoa(telefone);
 CREATE INDEX trimestreanoindice ON trimestre(ano);
 CREATE INDEX trimestrenumindice ON trimestre(numero);
 CREATE INDEX turmaindice ON turma(codturma);
-CREATE INDEX telrespcpfindice ON telefoneresponsavel(cpf);
-CREATE INDEX telresptelindice ON telefoneresponsavel(telefone);
