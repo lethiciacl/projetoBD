@@ -356,3 +356,17 @@ INSERT INTO telefonepessoa(cpf,telefone)
 VALUES('561.077.524-80','(83)5797-2171');
 INSERT INTO telefonepessoa(cpf,telefone)
 VALUES('003.962.124-33','(83)8739-5343');
+
+
+/*telefoneresponsavel*/
+
+INSERT INTO telefonepessoa(cpf,telefone)
+VALUES('947.564.740-63','(83)9954-3695');
+INSERT INTO telefonepessoa(cpf,telefone)
+VALUES('816.582.500-36','(83)9876-6013');
+INSERT INTO telefonepessoa(cpf,telefone)
+VALUES('455.270.350-11','(83)4209-2929');
+INSERT INTO telefonepessoa(cpf,telefone)
+VALUES('492.332.324-84','(83)5797-2984');
+INSERT INTO telefonepessoa(cpf,telefone)
+VALUES('829.340.194-03','(83)8739-5493');

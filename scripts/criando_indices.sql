@@ -25,3 +25,5 @@ CREATE INDEX telpesstelindice ON telefonepessoa(telefone);
 CREATE INDEX trimestreanoindice ON trimestre(ano);
 CREATE INDEX trimestrenumindice ON trimestre(numero);
 CREATE INDEX turmaindice ON turma(codturma);
+CREATE INDEX telrespcpfindice ON telefoneresponsavel(cpf);
+CREATE INDEX telresptelindice ON telefoneresponsavel(telefone);
