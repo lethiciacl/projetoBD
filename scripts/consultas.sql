@@ -45,3 +45,20 @@ WHERE m.codDiario IN (
 SELECT coddiario
 FROM visaoDiario
 WHERE disciplina ='Português')
+
+/*Lista responsáveis que possem mais de um telefone do trabalho*/
+SELECT nome AS Responsavel
+FROM visaoResponsavelPessoa*
+WHERE cpf IN 
+(SELECT cpf
+FROM telefoneResponsavel
+GROUP BY cpf
+HAVING COUNT(*) > 1);
+
+/*Listar professores que possuem avaliações */
+SELECT professor 
+FROM visaoDiario vd
+WHERE EXISTS 
+(SELECT * 
+FROM Avaliacao a
+WHERE a.codDiario = vd.codDiario AND a.tipo='Prova')
