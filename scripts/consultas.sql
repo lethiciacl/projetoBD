@@ -32,3 +32,16 @@ WHERE endereco LIKE '%Sousa%'
 SELECT nome AS Aluno, re AS RendimentoEscolar
 FROM visaoalunopessoa
 ORDER BY re DESC
+
+/*Listagem de alunos em ordem alfabética*/
+SELECT nome AS Alunos
+FROM VisaoAlunoPessoa
+ORDER BY nome
+
+/*Listar alunos matriculados na disciplina Protuguês*/
+SELECT a.matricula, a.nome AS Aluno
+FROM visaoAlunoPessoa a JOIN matricula m ON (a.cpf=m.cpfAluno)
+WHERE m.codDiario IN (
+SELECT coddiario
+FROM visaoDiario
+WHERE disciplina ='Português')

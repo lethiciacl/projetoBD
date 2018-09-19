@@ -198,3 +198,13 @@ CREATE TABLE telefonepessoa(
  	PRIMARY KEY(cpf, telefone),
  	CONSTRAINT cpf_fk FOREIGN KEY(cpf) REFERENCES pessoa(cpf)
 );
+
+CREATE TABLE telefoneresponsavel(
+	cpf VARCHAR(20),
+	telefone VARCHAR(32),
+	CONSTRAINT telefoneresponsavel_pk
+ 	PRIMARY KEY(cpf, telefone),
+ 	CONSTRAINT cpf_fk FOREIGN KEY(cpf)
+	REFERENCES responsavel(cpf)
+);
+

@@ -27,3 +27,9 @@ FROM evento NATURAL LEFT JOIN acontecimento;
 CREATE VIEW VisaoAvaliacao
 AS SELECT *
 FROM avaliacao NATURAL LEFT JOIN acontecimento;
+
+/*Visao do diário*/
+CREATE VIEW VisaoDiario
+AS SELECT d.codDiario, d.atualizado, p.matricula, p.nome AS Professor, t.serie, t.sala, dc.codDisciplina, dc.nome As Disciplina, dc.cargaHoraria
+FROM diario d, disciplina dc, turma t, visaoProfessorPessoa p
+WHERE d.codDisciplina = dc.codDisciplina AND t.codTurma = d.codTurma AND p.matricula=d.matProf
