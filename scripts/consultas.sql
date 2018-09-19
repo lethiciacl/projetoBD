@@ -62,3 +62,16 @@ WHERE EXISTS
 (SELECT * 
 FROM Avaliacao a
 WHERE a.codDiario = vd.codDiario AND a.tipo='Prova')
+
+/*Lista professores que não possuem email*/
+SELECT p.nome AS Professor
+FROM visaoProfessorPessoa p
+WHERE NOT EXISTS (
+SELECT * 
+FROM emailPessoa e 
+WHERE e.cpf=p.cpf)
+
+/*Listar alunos que assistem aulas nas salas "Sala 02" ou "Sala 03".*/
+SELECT a.matricula, a.nome As Aluno
+FROM (visaoAlunoPessoa a JOIN matricula m ON (a.cpf=m.cpfAluno)) JOIN visaoDiario d ON (m.codDiario=d.codDiario)
+WHERE d.sala IN ('Sala 02','Sala 03')
