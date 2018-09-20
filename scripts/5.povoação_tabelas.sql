@@ -207,15 +207,15 @@ VALUES('071.053.094-31','#D011','A aluna Maité Duarte apresentou compormatement
 /*compartilhamensagem*/
 
 INSERT INTO compartilhamensagem(cpfEnvia,cpfRecebe,codMensagem,visibilidade,dataHoraEnvio,dataHoraVisualizacao)
-VALUES('947.564.740-63','236.717.500-49','#D001',FALSE,'11/10/2018 11:29:29','11/10/2018 13:47:34');
+VALUES('071.053.094-31','236.717.500-49','#D001',FALSE,'10/05/2018 11:29:29','10/06/2018 13:47:34');
 INSERT INTO compartilhamensagem(cpfEnvia,cpfRecebe,codMensagem,visibilidade,dataHoraEnvio,dataHoraVisualizacao)
-VALUES('974.336.374-27','490.437.174-79','#D002',FALSE,'12/10/2018 15:11:23','12/10/2018 17:20:00');
+VALUES('071.053.094-31','490.437.174-79','#D002',FALSE,'12/07/2018 15:11:23','14/07/2018 17:20:00');
 INSERT INTO compartilhamensagem(cpfEnvia,cpfRecebe,codMensagem,visibilidade,dataHoraEnvio,dataHoraVisualizacao)
-VALUES('071.053.094-31','591.310.934-18','#D003',FALSE,'13/10/2018 16:00:02','13/10/2018 18:59:37');
+VALUES('071.053.094-31','591.310.934-18','#D003',FALSE,'13/08/2018 16:00:02','21/08/2018 18:59:37');
 INSERT INTO compartilhamensagem(cpfEnvia,cpfRecebe,codMensagem,visibilidade,dataHoraEnvio,dataHoraVisualizacao)
-VALUES('140.261.534-52','963.234.750-14','#D004',FALSE,'14/10/2018 09:45:36','14/10/2018 09:47:11');
+VALUES('140.261.534-52','963.234.750-14','#D004',FALSE,'14/09/2018 09:45:36','14/09/2018 09:47:11');
 INSERT INTO compartilhamensagem(cpfEnvia,cpfRecebe,codMensagem,visibilidade,dataHoraEnvio,dataHoraVisualizacao)
-VALUES('358.595.280-19','829.340.194-03','#D005',FALSE,'15/10/2018 07:43:34','15/10/2018 08:53:11');
+VALUES('358.595.280-19','829.340.194-03','#D005',FALSE,'15/08/2018 07:43:34','03/09/2018 08:53:11');
 INSERT INTO compartilhamensagem(cpfEnvia,cpfRecebe,codMensagem,visibilidade,dataHoraEnvio,dataHoraVisualizacao)
 VALUES('071.053.094-31','947.564.740-63','#D011',FALSE,'10/09/2018 07:43:34',null);
 INSERT INTO compartilhamensagem(cpfEnvia,cpfRecebe,codMensagem,visibilidade,dataHoraEnvio,dataHoraVisualizacao)
@@ -292,11 +292,11 @@ VALUES('#005','Dia dos Professores','Jantar de comemoração para o dia dos prof
 INSERT INTO avaliacao(codDiario,numero,tipo,codAcontecimento)
 VALUES('#AA01',1,'Prova','#006');
 INSERT INTO avaliacao(codDiario,numero,tipo,codAcontecimento)
-VALUES('#AA02',1,'Prova','#007');
+VALUES('#AA01',1,'Prova','#007');
 INSERT INTO avaliacao(codDiario,numero,tipo,codAcontecimento)
 VALUES('#AA03',1,'Prova','#008');
 INSERT INTO avaliacao(codDiario,numero,tipo,codAcontecimento)
-VALUES('#AA04',1,'Prova','#009');
+VALUES('#AA03',1,'Prova','#009');
 INSERT INTO avaliacao(codDiario,numero,tipo,codAcontecimento)
 VALUES('#AA05',1,'Prova','#010');
 
