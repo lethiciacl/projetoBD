@@ -46,7 +46,7 @@ SELECT coddiario
 FROM visaoDiario
 WHERE disciplina ='Português')
 
-/*Lista responsáveis que possem mais de um telefone do trabalho*/
+/*Lista responsáveis que possuam mais de um telefone do trabalho*/
 SELECT nome AS Responsavel
 FROM visaoResponsavelPessoa*
 WHERE cpf IN 
@@ -72,6 +72,9 @@ FROM emailPessoa e
 WHERE e.cpf=p.cpf)
 
 /*Listar alunos que assistem aulas nas salas "Sala 02" ou "Sala 03".*/
-SELECT a.matricula, a.nome As Aluno
+(SELECT a.matricula, a.nome As Aluno
 FROM (visaoAlunoPessoa a JOIN matricula m ON (a.cpf=m.cpfAluno)) JOIN visaoDiario d ON (m.codDiario=d.codDiario)
-WHERE d.sala IN ('Sala 02','Sala 03')
+WHERE d.sala ='Sala 02') UNION (SELECT a.matricula, a.nome As Aluno
+FROM (visaoAlunoPessoa a JOIN matricula m ON (a.cpf=m.cpfAluno)) JOIN visaoDiario d ON (m.codDiario=d.codDiario)
+WHERE d.sala ='Sala 03')
+

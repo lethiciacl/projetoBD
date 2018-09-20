@@ -153,17 +153,18 @@ INSERT INTO turma(codTurma, serie, sala)
 VALUES('#B005','1B-EM', 'Sala 05');
 
 /*trimestre*/
-
 INSERT INTO trimestre(ano, numero, dataInicio, dataFim)
-VALUES(2018,2,'05/09/2018','11/09/2018');
+VALUES(2017,1,'14/02/2017','18/05/2017');
 INSERT INTO trimestre(ano, numero, dataInicio, dataFim)
-VALUES(2018,1,'22/01/2018','08/05/2018');
+VALUES(2017,2,'21/05/2017','06/09/2017');
 INSERT INTO trimestre(ano, numero, dataInicio, dataFim)
-VALUES(2018,3,'09/12/2018','07/12/2018');
+VALUES(2017,3,'10/09/2017','14/12/2017');
 INSERT INTO trimestre(ano, numero, dataInicio, dataFim)
-VALUES(2019,1,'21/01/2019','07/05/2018');
+VALUES(2018,1,'14/02/2018','18/05/2018');
 INSERT INTO trimestre(ano, numero, dataInicio, dataFim)
-VALUES(2019,2,'05/08/2019','10/09/2019');
+VALUES(2018,2,'21/05/2018','06/09/2018');
+INSERT INTO trimestre(ano, numero, dataInicio, dataFim)
+VALUES(2018,3,'10/09/2018','14/12/2018');
 
 /*organizatrimestre*/
 
