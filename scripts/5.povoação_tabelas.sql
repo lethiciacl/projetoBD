@@ -276,15 +276,15 @@ VALUES('#AA05',TRUE,'2018120005','#B005','#C005');
 
 /*evento*/
 
-INSERT INTO evento(codAcontecimento,coordenador,descrição,cpfAdm)
+INSERT INTO evento(codAcontecimento,coordenador,descricao,cpfAdm)
 VALUES('#001','Mário','Dia dos mães proposto para enaltecer a figura materna.','561.077.524-80');
-INSERT INTO evento(codAcontecimento,coordenador,descrição,cpfAdm)
+INSERT INTO evento(codAcontecimento,coordenador,descricao,cpfAdm)
 VALUES('#002','Andressa','Dia dos pais proposto para enaltecer a figura paterna.','561.077.524-80');
-INSERT INTO evento(codAcontecimento,coordenador,descrição,cpfAdm)
+INSERT INTO evento(codAcontecimento,coordenador,descricao,cpfAdm)
 VALUES('#003','Anália', 'Dia dos estudantes proposto para enaltecer os alunos.','561.077.524-80');
-INSERT INTO evento(codAcontecimento,coordenador,descrição,cpfAdm)
+INSERT INTO evento(codAcontecimento,coordenador,descricao,cpfAdm)
 VALUES('#004','Natal','Auto de natal para comemorar o evento cristão.','071.053.094-31');
-INSERT INTO evento(codAcontecimento,coordenador,descrição,cpfAdm)
+INSERT INTO evento(codAcontecimento,coordenador,descricao,cpfAdm)
 VALUES('#005','Dia dos Professores','Jantar de comemoração para o dia dos professores.','591.310.934-18');
 
 /*avaliacao*/

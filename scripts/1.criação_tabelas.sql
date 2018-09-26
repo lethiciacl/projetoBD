@@ -92,7 +92,7 @@ CREATE TABLE diario(
 CREATE TABLE evento(
 	codAcontecimento VARCHAR(32),
  	coordenador VARCHAR(100) NOT NULL,
-	descrição VARCHAR(100) NOT NULL, 
+	descricao VARCHAR(100) NOT NULL, 
  	cpfAdm VARCHAR(20) NOT NULL, 
  	CONSTRAINT evento_pk PRIMARY KEY (codAcontecimento),
  	CONSTRAINT cpfAdm_fk FOREIGN KEY (cpfAdm) REFERENCES administrador(cpf) 
