@@ -1,6 +1,4 @@
-/*Gatilho para enviar mensagem quando avaliação for 
-
-marcada*/
+/*Gatilho para enviar mensagem quando avaliação for marcada*/
 CREATE OR REPLACE FUNCTION CriaMensagensAvaliacao()
 	RETURNS TRIGGER AS $$
 	DECLARE		
@@ -30,7 +28,7 @@ CREATE OR REPLACE FUNCTION CriaMensagensAvaliacao()
 		FROM diario, professor, disciplina 
 		WHERE diario.codDiario = NEW.codDiario AND diario.matProf = professor.matricula
 		AND diario.codDisciplina = disciplina.codDisciplina;
-
+		/*Criando mensagem*/
 		mensagem := nomeAcont || ' - ' || to_char(dataAcont,'DD/MM/YYYY') || ' '|| horaIni || ' - ' || localAcont ;
 		SELECT proximoCodMensagem() INTO codMsg;
 		INSERT INTO mensagem VALUES(
@@ -74,3 +72,81 @@ CREATE TRIGGER InformaAvaliacao
 AFTER INSERT ON Avaliacao
 FOR EACH ROW
 EXECUTE PROCEDURE CriaMensagensAvaliacao();
+
+/*---------------------------------------------------------------------------------------*/
+
+/*Cria mensagem de evento*/
+CREATE OR REPLACE FUNCTION CriaMensagensEvento()
+	RETURNS TRIGGER AS $$
+	DECLARE		
+		nomeAcont acontecimento.nome%TYPE;
+		dataAcont acontecimento.data%TYPE;
+		horaIni acontecimento.horarioInicio%TYPE;
+		localAcont acontecimento.local%TYPE;
+
+		mensagem mensagem.texto%TYPE;
+		codMsg mensagem.codMensagem%TYPE;
+
+		cpfPess pessoa.cpf%TYPE;
+
+	BEGIN
+		SELECT INTO 
+			nomeAcont, dataAcont, horaIni, localAcont
+			nome, data, horarioInicio, local
+		FROM acontecimento WHERE codAcontecimento = NEW.codAcontecimento;
+
+		/*Criando mensagem*/
+		mensagem := nomeAcont || ' - ' || to_char(dataAcont,'DD/MM/YYYY') || ' '|| horaIni || ' - ' || localAcont ;
+		SELECT proximoCodMensagem() INTO codMsg;
+		INSERT INTO mensagem VALUES(
+			NEW.cpfAdm,
+			codMsg,
+			mensagem);
+
+		/*Compartilhando com o pessoa*/
+		FOR cpfPess IN 
+				SELECT cpf FROM pessoa 
+			LOOP
+				INSERT INTO CompartilhaMensagem
+					VALUES(
+						NEW.cpfAdm,
+						cpfPess,
+						codMsg,
+						TRUE,
+						CURRENT_TIMESTAMP(0),
+						NULL);					
+			END LOOP;
+		RETURN NULL;
+	END
+	$$ LANGUAGE PLPGSQL;
+
+/*Criando o Gatinho qaundo for marcado um evento*/
+CREATE TRIGGER InformaEvento
+AFTER INSERT ON Evento
+FOR EACH ROW
+EXECUTE PROCEDURE CriaMensagensEvento();
+
+/*---------------------------------------------------------------------------------------*/
+
+/*Modifica o RE do aluno*/
+CREATE OR REPLACE FUNCTION ModificaREAluno()
+	RETURNS TRIGGER AS $$
+	DECLARE		
+		media ResultadoAvaliacao.nota%TYPE;
+	BEGIN
+		SELECT INTO media AVG(nota) FROM ResultadoAvaliacao
+		WHERE cpfAluno = NEW.cpfAluno
+		GROUP BY cpfAluno;
+
+		UPDATE aluno SET re=media WHERE cpf = NEW.cpfAluno;
+
+		RETURN NULL;
+	END
+	$$ LANGUAGE PLPGSQL;
+
+/*Criando o Gatinho qaundo for lancada a nota da avalicao*/
+CREATE TRIGGER ResultadoAvaliacao
+AFTER INSERT ON ResultadoAvaliacao
+FOR EACH ROW
+EXECUTE PROCEDURE ModificaREAluno();
+
