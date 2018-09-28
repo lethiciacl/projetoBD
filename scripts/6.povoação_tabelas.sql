@@ -90,6 +90,19 @@ VALUES('358.595.280-19','2018140004',7.6,'Marcella','Matheus');
 INSERT INTO aluno(cpf,matricula,RE,nomeMae,nomePai)
 VALUES('236.717.500-49','2018140005',8.4,'Edilsa','Theo');
 
+/*responsabiliza*/
+
+INSERT INTO responsabiliza(codResponsavel, cpfAluno, parentesco)
+VALUES('947.564.740-63','537.759.154-27','Mãe');
+INSERT INTO responsabiliza(codResponsavel, cpfAluno, parentesco)
+VALUES('816.582.500-36','003.962.124-33', 'Mãe');
+INSERT INTO responsabiliza(codResponsavel, cpfAluno, parentesco)
+VALUES('455.270.350-11','963.234.750-14','Mãe');
+INSERT INTO responsabiliza(codResponsavel, cpfAluno, parentesco)
+VALUES('492.332.324-84','358.595.280-19','Pai');
+INSERT INTO responsabiliza(codResponsavel, cpfAluno, parentesco)
+VALUES('829.340.194-03','236.717.500-49','Pai');
+
 /*administrador*/
 
 INSERT INTO administrador(cpf,cargo,setor)
@@ -115,29 +128,6 @@ INSERT INTO professor(cpf,matricula,titulacao)
 VALUES('725.430.454-73','2018120004','doutorado');
 INSERT INTO professor(cpf,matricula,titulacao)
 VALUES('421.019.024-19','2018120005','doutorado');
-
-/*acontecimento*/
-
-INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
-VALUES('#001','Dia das Mães','13/05/2018','17:30','21:00','Ginásio');
-INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
-VALUES('#002','Dia dos Pais','08/08/2018','18:00','22:00','Ginásio');
-INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
-VALUES('#003','Dia do Estudante','11/08/2018','10:45','11:45','Ginásio');
-INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
-VALUES('#004','Natal','22/12/2018','18:00','20:00','Praça Padre Rolim');
-INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
-VALUES('#005','Dia dos Professores','14/10/2018','19:00','23:00','Ginásio');
-INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
-VALUES('#006','Avaliação de Matemática','13/09/2018','11:00','12:05','Sala-01');
-INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
-VALUES('#007','Avaliação de Português','18/09/2018','07:00','09:15','Sala-02');
-INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
-VALUES('#008','Avaliação de Geografia', '20/09/2018','08:30','09:15','Sala-01');
-INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
-VALUES('#009','Avaliação de Inglês','12/09/2018','09:30','11:00','Sala-02');
-INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
-VALUES('#010','Avaliação de Espanhol','14/09/2018','10:45','12:05','Sala 01');
 
 /*turma*/
 
@@ -178,6 +168,68 @@ INSERT INTO organizatrimestre(ano,numero,codTurma)
 VALUES(2018,1,'#B004');
 INSERT INTO organizatrimestre(ano,numero,codTurma)
 VALUES(2018,3,'#B005');
+
+/*disciplina*/
+
+INSERT INTO disciplina(nome, cargaHoraria, codDisciplina)
+VALUES('Matemática',40,'#C001');
+INSERT INTO disciplina(nome, cargaHoraria, codDisciplina)
+VALUES('Português',40,'#C002');
+INSERT INTO disciplina(nome, cargaHoraria, codDisciplina)
+VALUES('Geografia',40,'#C003');
+INSERT INTO disciplina(nome, cargaHoraria, codDisciplina)
+VALUES('Inglês',20,'#C004');
+INSERT INTO disciplina(nome, cargaHoraria, codDisciplina)
+VALUES('Espanhol',20,'#C005');
+
+/*diario*/
+
+INSERT INTO diario(codDiario, atualizado, matProf, codTurma, codDisciplina)
+VALUES('#AA01',TRUE, '2018120001','#B001','#C001');
+INSERT INTO diario(codDiario, atualizado, matProf, codTurma, codDisciplina)
+VALUES('#AA02',TRUE, '2018120002','#B002','#C002');
+INSERT INTO diario(codDiario, atualizado, matProf, codTurma, codDisciplina)
+VALUES('#AA03',TRUE,'2018120003','#B003','#C003');
+INSERT INTO diario(codDiario, atualizado, matProf, codTurma, codDisciplina)
+VALUES('#AA04',TRUE,'2018120004','#B004','#C004');
+INSERT INTO diario(codDiario, atualizado, matProf, codTurma, codDisciplina)
+VALUES('#AA05',TRUE,'2018120005','#B005','#C005');
+
+/*matricula*/
+
+INSERT INTO matricula(cpfAluno,codDiario,frequencia)
+VALUES('537.759.154-27','#AA01', 91);
+INSERT INTO matricula(cpfAluno,codDiario,frequencia)
+VALUES('003.962.124-33','#AA02', 93);
+INSERT INTO matricula(cpfAluno,codDiario,frequencia)
+VALUES('963.234.750-14','#AA02', 94);
+INSERT INTO matricula(cpfAluno,codDiario,frequencia)
+VALUES('358.595.280-19','#AA02', 79);
+INSERT INTO matricula(cpfAluno,codDiario,frequencia)
+VALUES('236.717.500-49','#AA01', 88);
+
+/*acontecimento*/
+
+INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
+VALUES('#001','Dia das Mães','13/05/2018','17:30','21:00','Ginásio');
+INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
+VALUES('#002','Dia dos Pais','08/08/2018','18:00','22:00','Ginásio');
+INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
+VALUES('#003','Dia do Estudante','11/08/2018','10:45','11:45','Ginásio');
+INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
+VALUES('#004','Natal','22/12/2018','18:00','20:00','Praça Padre Rolim');
+INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
+VALUES('#005','Dia dos Professores','14/10/2018','19:00','23:00','Ginásio');
+INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
+VALUES('#006','Avaliação de Matemática','13/09/2018','11:00','12:05','Sala-01');
+INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
+VALUES('#007','Avaliação de Português','18/09/2018','07:00','09:15','Sala-02');
+INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
+VALUES('#008','Avaliação de Geografia', '20/09/2018','08:30','09:15','Sala-01');
+INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
+VALUES('#009','Avaliação de Inglês','12/09/2018','09:30','11:00','Sala-02');
+INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
+VALUES('#010','Avaliação de Espanhol','14/09/2018','10:45','12:05','Sala 01');
 
 /*mensagem*/
 
@@ -221,7 +273,6 @@ VALUES('071.053.094-31','947.564.740-63','#D011',FALSE,'10/09/2018 07:43:34',nul
 INSERT INTO compartilhamensagem(cpfEnvia,cpfRecebe,codMensagem,visibilidade,dataHoraEnvio,dataHoraVisualizacao)
 VALUES('829.340.194-03','816.582.500-36','#D010',FALSE,'20/09/2018 07:43:34','20/09/2018 08:43:34');
 
-
 /*respondemensagem*/
 
 INSERT INTO respondemensagem(codMensagem,codResposta)
@@ -234,6 +285,33 @@ INSERT INTO respondemensagem(codMensagem,codResposta)
 VALUES('#D007','#D008');
 INSERT INTO respondemensagem(codMensagem,codResposta)
 VALUES('#D009','D009');
+
+
+/*avaliacao*/
+
+INSERT INTO avaliacao(codDiario,numero,tipo,codAcontecimento)
+VALUES('#AA01',1,'Prova','#006');
+INSERT INTO avaliacao(codDiario,numero,tipo,codAcontecimento)
+VALUES('#AA01',1,'Prova','#007');
+INSERT INTO avaliacao(codDiario,numero,tipo,codAcontecimento)
+VALUES('#AA03',1,'Prova','#008');
+INSERT INTO avaliacao(codDiario,numero,tipo,codAcontecimento)
+VALUES('#AA03',1,'Prova','#009');
+INSERT INTO avaliacao(codDiario,numero,tipo,codAcontecimento)
+VALUES('#AA02',1,'Prova','#010');
+
+/*conteudoavaliacao*/
+
+INSERT INTO conteudoavaliacao(codAcontecimento,conteudo)
+VALUES('#006','Álgebra');
+INSERT INTO conteudoavaliacao(codAcontecimento,conteudo)
+VALUES('#007','Figuras de Linguagem');
+INSERT INTO conteudoavaliacao(codAcontecimento,conteudo)
+VALUES('#008','Relevo');
+INSERT INTO conteudoavaliacao(codAcontecimento,conteudo)
+VALUES('#009','Present Continuous');
+INSERT INTO conteudoavaliacao(codAcontecimento,conteudo)
+VALUES('#010','Préterito pluscuamperfecto');
 
 /*resultadoavaliação*/
 
@@ -248,32 +326,6 @@ VALUES('358.595.280-19','#009',9.1);
 INSERT INTO resultadoavaliacao(cpfAluno,codAcontecimento,nota)
 VALUES('236.717.500-49','#010',10.0);
 
-/*disciplina*/
-
-INSERT INTO disciplina(nome, cargaHoraria, codDisciplina)
-VALUES('Matemática',40,'#C001');
-INSERT INTO disciplina(nome, cargaHoraria, codDisciplina)
-VALUES('Português',40,'#C002');
-INSERT INTO disciplina(nome, cargaHoraria, codDisciplina)
-VALUES('Geografia',40,'#C003');
-INSERT INTO disciplina(nome, cargaHoraria, codDisciplina)
-VALUES('Inglês',20,'#C004');
-INSERT INTO disciplina(nome, cargaHoraria, codDisciplina)
-VALUES('Espanhol',20,'#C005');
-
-/*diario*/
-
-INSERT INTO diario(codDiario, atualizado, matProf, codTurma, codDisciplina)
-VALUES('#AA01',TRUE, '2018120001','#B001','#C001');
-INSERT INTO diario(codDiario, atualizado, matProf, codTurma, codDisciplina)
-VALUES('#AA02',TRUE, '2018120002','#B002','#C002');
-INSERT INTO diario(codDiario, atualizado, matProf, codTurma, codDisciplina)
-VALUES('#AA03',TRUE,'2018120003','#B003','#C003');
-INSERT INTO diario(codDiario, atualizado, matProf, codTurma, codDisciplina)
-VALUES('#AA04',TRUE,'2018120004','#B004','#C004');
-INSERT INTO diario(codDiario, atualizado, matProf, codTurma, codDisciplina)
-VALUES('#AA05',TRUE,'2018120005','#B005','#C005');
-
 /*evento*/
 
 INSERT INTO evento(codAcontecimento,coordenador,descricao,cpfAdm)
@@ -287,57 +339,6 @@ VALUES('#004','Natal','Auto de natal para comemorar o evento cristão.','071.053
 INSERT INTO evento(codAcontecimento,coordenador,descricao,cpfAdm)
 VALUES('#005','Dia dos Professores','Jantar de comemoração para o dia dos professores.','591.310.934-18');
 
-/*avaliacao*/
-
-INSERT INTO avaliacao(codDiario,numero,tipo,codAcontecimento)
-VALUES('#AA01',1,'Prova','#006');
-INSERT INTO avaliacao(codDiario,numero,tipo,codAcontecimento)
-VALUES('#AA01',1,'Prova','#007');
-INSERT INTO avaliacao(codDiario,numero,tipo,codAcontecimento)
-VALUES('#AA03',1,'Prova','#008');
-INSERT INTO avaliacao(codDiario,numero,tipo,codAcontecimento)
-VALUES('#AA03',1,'Prova','#009');
-INSERT INTO avaliacao(codDiario,numero,tipo,codAcontecimento)
-VALUES('#AA05',1,'Prova','#010');
-
-/*responsabiliza*/
-
-INSERT INTO responsabiliza(codResponsavel, cpfAluno, parentesco)
-VALUES('947.564.740-63','537.759.154-27','Mãe');
-INSERT INTO responsabiliza(codResponsavel, cpfAluno, parentesco)
-VALUES('816.582.500-36','003.962.124-33', 'Mãe');
-INSERT INTO responsabiliza(codResponsavel, cpfAluno, parentesco)
-VALUES('455.270.350-11','963.234.750-14','Mãe');
-INSERT INTO responsabiliza(codResponsavel, cpfAluno, parentesco)
-VALUES('492.332.324-84','358.595.280-19','Pai');
-INSERT INTO responsabiliza(codResponsavel, cpfAluno, parentesco)
-VALUES('829.340.194-03','236.717.500-49','Pai');
-
-/*matricula*/
-
-INSERT INTO matricula(cpfAluno,codDiario,frequencia)
-VALUES('537.759.154-27','#AA01', 91);
-INSERT INTO matricula(cpfAluno,codDiario,frequencia)
-VALUES('003.962.124-33','#AA02', 93);
-INSERT INTO matricula(cpfAluno,codDiario,frequencia)
-VALUES('963.234.750-14','#AA02', 94);
-INSERT INTO matricula(cpfAluno,codDiario,frequencia)
-VALUES('358.595.280-19','#AA02', 79);
-INSERT INTO matricula(cpfAluno,codDiario,frequencia)
-VALUES('236.717.500-49','#AA01', 88);
-
-/*conteudoavaliacao*/
-
-INSERT INTO conteudoavaliacao(codAcontecimento,conteudo)
-VALUES('#006','Álgebra');
-INSERT INTO conteudoavaliacao(codAcontecimento,conteudo)
-VALUES('#007','Figuras de Linguagem');
-INSERT INTO conteudoavaliacao(codAcontecimento,conteudo)
-VALUES('#008','Relevo');
-INSERT INTO conteudoavaliacao(codAcontecimento,conteudo)
-VALUES('#009','Present Continuous');
-INSERT INTO conteudoavaliacao(codAcontecimento,conteudo)
-VALUES('#010','Préterito pluscuamperfecto');
 
 /*emailpessoa*/
 
