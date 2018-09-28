@@ -25,8 +25,34 @@ FROM evento NATURAL LEFT JOIN acontecimento;
 
 /*Visão de junção natural entre avaliacao e acontecimeno*/
 CREATE VIEW VisaoAvaliacao
-AS SELECT *
-FROM avaliacao NATURAL LEFT JOIN acontecimento;
+AS SELECT 
+	av.codAcontecimento	AS codAcontecimento,
+	av.tipo				AS tipoAvaliacao,
+	av.numero			AS numAvaliacao,
+	ac.nome 			AS nomeAvaliacao,
+	ac.data 			AS dataAvaliacao,
+	ac.horarioInicio 	AS horaIniAvaliacao,
+	ac.horarioFim		AS horaFimAvaliacao,
+	ac.local			AS localAvaliacao,
+	dc.nome 			AS disciplina,
+	di.codDiario		AS codDiario,
+	ps.cpf				AS cpfProfessor,
+	ps.nome 			AS professor
+
+FROM 
+	avaliacao av, 
+	acontecimento ac,
+	diario di,
+	disciplina dc,
+	professor pr,
+	pessoa ps
+WHERE 
+	av.codAcontecimento = ac.codAcontecimento AND 
+	av.codDiario = di.codDiario AND 
+	di.codDisciplina = dc.codDisciplina AND
+	di.matProf = pr.matricula AND
+	ps.cpf = pr.cpf; 
+
 
 /*Visao do diário*/
 CREATE VIEW VisaoDiario

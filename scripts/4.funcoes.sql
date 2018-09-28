@@ -55,3 +55,20 @@ CREATE OR REPLACE FUNCTION diasParaFinalTrimestre(INTEGER, INTEGER) RETURNS INTE
 			RETURN dias;
 		END
 	$$ LANGUAGE PLPGSQL;
+
+/*Proximo código da mensagem */
+CREATE OR REPLACE FUNCTION proximoCodMensagem() RETURNS mensagem.codMensagem%TYPE
+	AS $$
+		DECLARE
+			prx INTEGER;
+			cod mensagem.codMensagem%TYPE;
+		BEGIN
+			SELECT MAX(to_number(SUBSTRING(codMensagem FROM 3)::VARCHAR,'000'))+1 
+			INTO prx
+			FROM MENSAGEM;
+			SELECT LPAD(CAST(prx AS VARCHAR),3,'0')
+			INTO cod;
+			cod := '#D'||cod;
+			RETURN cod;
+		END
+	$$ LANGUAGE PLPGSQL;
