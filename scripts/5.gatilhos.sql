@@ -16,7 +16,7 @@ CREATE OR REPLACE FUNCTION CriaMensagensAvaliacao()
 		mensagem mensagem.texto%TYPE;
 		codMsg mensagem.codMensagem%TYPE;
 		cpfAln aluno.cpf%TYPE;
-		cpfResponsavel responsavel.cpf%TYPE;
+		cpfRsp responsavel.cpf%TYPE;
 	BEGIN
 
 		SELECT INTO 
@@ -31,21 +31,15 @@ CREATE OR REPLACE FUNCTION CriaMensagensAvaliacao()
 		WHERE diario.codDiario = NEW.codDiario AND diario.matProf = professor.matricula
 		AND diario.codDisciplina = disciplina.codDisciplina;
 
-		/*mensagem := 'Informativo. '||
-		nomeAcont || ' foi marcada para o dia '||
-		to_char(dataAcont,'DD/MM/YYYY')|| ', horário '||
-		horaIni || ' e local ' ||
-		localAcont || ' da disciplina '||
-		nomeDisc;*/
-
 		mensagem := nomeAcont || ' - ' || to_char(dataAcont,'DD/MM/YYYY') || ' '|| horaIni || ' - ' || localAcont ;
 		SELECT proximoCodMensagem() INTO codMsg;
 		INSERT INTO mensagem VALUES(
 			cpfProfessor,
 			codMsg,
 			mensagem);
-
-		FOR cpfAln IN SELECT cpfAluno FROM matricula WHERE codDiario=NEW.codDiario
+		/*Compartilhando com o aluno*/
+		FOR cpfAln IN 
+				SELECT cpfAluno FROM matricula WHERE codDiario=NEW.codDiario
 			LOOP
 				INSERT INTO CompartilhaMensagem
 					VALUES(
@@ -54,11 +48,23 @@ CREATE OR REPLACE FUNCTION CriaMensagensAvaliacao()
 						codMsg,
 						TRUE,
 						CURRENT_TIMESTAMP(0),
-						NULL);	
-				
-
-
+						NULL);					
 			END LOOP;
+		/*Compartilhando com o responsavel*/
+		FOR cpfRsp IN 
+				SELECT codResponsavel 
+				FROM matricula NATURAL JOIN responsabiliza
+				WHERE codDiario=NEW.codDiario 
+			LOOP
+				INSERT INTO CompartilhaMensagem
+					VALUES(
+						cpfProfessor,
+						cpfRsp,
+						codMsg,
+						TRUE,
+						CURRENT_TIMESTAMP(0),
+						NULL);					
+			END LOOP;	
 		RETURN NULL;
 	END
 	$$ LANGUAGE PLPGSQL;
