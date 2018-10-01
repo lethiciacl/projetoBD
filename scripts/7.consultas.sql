@@ -13,6 +13,17 @@ SELECT p.nome AS Destinatario, m.texto as Mensagem
 FROM mensagem m, compartilhamensagem c, pessoa p
 WHERE c.codMensagem = m.codMensagem AND c.cpfRecebe = p.cpf and dataHoraVisualizacao is null;
 
+/*Listar as mensagens destinadas a Joaquim Assis*/
+SELECT dataHoraEnvio AS Data, m.texto AS Mensagem, pe.nome AS Remetente,
+CASE
+	WHEN (cm.dataHoraVisualizacao IS NOT NULL) THEN 'Visualizada'
+	WHEN (cm.dataHoraVisualizacao IS NULL) THEN 'Não Visualizada'
+END AS Situacao
+FROM mensagem m, compartilhamensagem cm, pessoa pr, pessoa pe
+WHERE m.codMensagem = cm.codMensagem AND cm.cpfRecebe = pr.cpf AND cm.cpfEnvia = pe.cpf 
+AND pr.nome ='Joaquim Assis'
+ORDER BY cm.dataHoraEnvio DESC;
+
 /*Listar mensagens destinadas a Carlos que já foram visualizadas.*/
 SELECT m.texto AS Mensagem
 FROM pessoa p, mensagem m, compartilhamensagem c
@@ -116,9 +127,9 @@ GROUP BY HORARIO
 ORDER BY COUNT(*) DESC;
 
 /*Relacionar o 3 primeiro colocado no simulado de Geografia*/
-SELECT acontecimento.nome, visaoAlunoPessoa.nome AS Aluno, nota, *
-FROM (avaliacao NATURAL JOIN resultadoavaliacao) NATURAL JOIN acontecimento, VisaoAlunoPessoa
+SELECT ac.nome,va.matricula, va.nome AS Aluno, rav.nota
+FROM (avaliacao av NATURAL JOIN resultadoavaliacao rav) NATURAL JOIN acontecimento ac, VisaoAlunoPessoa va
 
-WHERE tipo='Simulado'  AND acontecimento.nome = 'Simulado de Geografia' AND cpfaluno = cpf
-ORDER BY codacontecimento, nota DESC
+WHERE av.tipo='Simulado'  AND ac.nome LIKE '%Geografia%' AND rav.cpfaluno = cpf
+ORDER BY ac.codacontecimento, rav.nota DESC
 LIMIT(3);
