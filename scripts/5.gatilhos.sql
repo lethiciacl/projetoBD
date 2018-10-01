@@ -1,4 +1,4 @@
-/*Gatilho para enviar mensagem quando avaliação for marcada*/
+﻿/*Gatilho para enviar mensagem quando avaliação for marcada*/
 CREATE OR REPLACE FUNCTION CriaMensagensAvaliacao()
 	RETURNS TRIGGER AS $$
 	DECLARE		
@@ -150,3 +150,71 @@ AFTER INSERT ON ResultadoAvaliacao
 FOR EACH ROW
 EXECUTE PROCEDURE ModificaREAluno();
 
+/*---------------------------------------------------------------------------------------*/
+
+/*Mensagem quando frequencia ficar abaixo de 75 */
+CREATE OR REPLACE FUNCTION InformaFrequencia()
+	RETURNS TRIGGER AS $$
+	DECLARE
+		cpfProfessor professor.cpf%TYPE;
+		nomeDisc disciplina.nome%TYPE;
+		mensagem mensagem.texto%TYPE;
+		codMsg mensagem.codMensagem%TYPE;
+		nomeAluno pessoa.nome%TYPE;
+		cpfRsp responsavel.cpf%TYPE;
+	BEGIN
+
+		SELECT INTO
+			nomeAluno
+			nome
+		FROM pessoa
+		WHERE cpf = NEW.cpfAluno;
+		SELECT INTO
+			cpfProfessor, nomeDisc
+			cpf, nome
+		FROM diario, professor, disciplina 
+		WHERE diario.codDiario = NEW.codDiario AND diario.matProf = professor.matricula
+		AND diario.codDisciplina = disciplina.codDisciplina;
+		/*Criando mensagem*/
+		mensagem := 'A frenquencia do aluno '||nomeAluno|| ' na disciplina  '||nomeDisc||' é de '|| NEW.frequencia||'.';
+		SELECT proximoCodMensagem() INTO codMsg;
+		INSERT INTO mensagem VALUES(
+			cpfProfessor,
+			codMsg,
+			mensagem);
+		/*Compartilhando com o aluno*/
+		
+		INSERT INTO CompartilhaMensagem
+			VALUES(
+				cpfProfessor,
+				NEW.cpfAluno,
+				codMsg,
+				TRUE,
+				CURRENT_TIMESTAMP(0),
+				NULL);					
+		
+		/*Compartilhando com o responsavel*/
+		FOR cpfRsp IN 
+				SELECT codResponsavel 
+				FROM matricula NATURAL JOIN responsabiliza
+				WHERE codDiario=NEW.codDiario AND matricula.cpfAluno=NEW.cpfAluno
+			LOOP
+				INSERT INTO CompartilhaMensagem
+					VALUES(
+						cpfProfessor,
+						cpfRsp,
+						codMsg,
+						TRUE,
+						CURRENT_TIMESTAMP(0),
+						NULL);					
+			END LOOP;	
+		RETURN NULL;
+	END
+	$$ LANGUAGE PLPGSQL;
+
+/*Criando o gatilho quando a frequencia ficar abaixo de 75%*/
+CREATE TRIGGER FrequenciaInferior 
+AFTER INSERT OR UPDATE ON matricula
+FOR EACH ROW
+WHEN (NEW.frequencia < 0.75)
+EXECUTE PROCEDURE InformaFrequencia();

@@ -198,15 +198,15 @@ VALUES('#AA05',TRUE,'2018120005','#B005','#C005');
 /*matricula*/
 
 INSERT INTO matricula(cpfAluno,codDiario,frequencia)
-VALUES('537.759.154-27','#AA01', 91);
+VALUES('537.759.154-27','#AA01', 0.91);
 INSERT INTO matricula(cpfAluno,codDiario,frequencia)
-VALUES('003.962.124-33','#AA02', 93);
+VALUES('003.962.124-33','#AA02', 0.93);
 INSERT INTO matricula(cpfAluno,codDiario,frequencia)
-VALUES('963.234.750-14','#AA02', 94);
+VALUES('963.234.750-14','#AA02', 0.94);
 INSERT INTO matricula(cpfAluno,codDiario,frequencia)
-VALUES('358.595.280-19','#AA02', 79);
+VALUES('358.595.280-19','#AA02', 0.70);
 INSERT INTO matricula(cpfAluno,codDiario,frequencia)
-VALUES('236.717.500-49','#AA01', 88);
+VALUES('236.717.500-49','#AA01', 0.88);
 
 /*acontecimento*/
 
@@ -259,7 +259,7 @@ VALUES('071.053.094-31','#D011','A aluna Maité Duarte apresentou compormatement
 /*compartilhamensagem*/
 
 INSERT INTO compartilhamensagem(cpfEnvia,cpfRecebe,codMensagem,visibilidade,dataHoraEnvio,dataHoraVisualizacao)
-VALUES('071.053.094-31','236.717.500-49','#D001',FALSE,'10/05/2018 11:29:29','10/06/2018 13:47:34');
+VALUES('071.053.094-31','236.717.500-49','#D001',FALSE,'10/05/2018 02:29:29','10/06/2018 13:47:34');
 INSERT INTO compartilhamensagem(cpfEnvia,cpfRecebe,codMensagem,visibilidade,dataHoraEnvio,dataHoraVisualizacao)
 VALUES('071.053.094-31','490.437.174-79','#D002',FALSE,'12/07/2018 15:11:23','14/07/2018 17:20:00');
 INSERT INTO compartilhamensagem(cpfEnvia,cpfRecebe,codMensagem,visibilidade,dataHoraEnvio,dataHoraVisualizacao)
@@ -267,9 +267,9 @@ VALUES('071.053.094-31','591.310.934-18','#D003',FALSE,'13/08/2018 16:00:02','21
 INSERT INTO compartilhamensagem(cpfEnvia,cpfRecebe,codMensagem,visibilidade,dataHoraEnvio,dataHoraVisualizacao)
 VALUES('140.261.534-52','963.234.750-14','#D004',FALSE,'14/09/2018 09:45:36','14/09/2018 09:47:11');
 INSERT INTO compartilhamensagem(cpfEnvia,cpfRecebe,codMensagem,visibilidade,dataHoraEnvio,dataHoraVisualizacao)
-VALUES('358.595.280-19','829.340.194-03','#D005',FALSE,'15/08/2018 07:43:34','03/09/2018 08:53:11');
+VALUES('358.595.280-19','829.340.194-03','#D005',FALSE,'15/08/2018 05:43:34','03/09/2018 08:53:11');
 INSERT INTO compartilhamensagem(cpfEnvia,cpfRecebe,codMensagem,visibilidade,dataHoraEnvio,dataHoraVisualizacao)
-VALUES('071.053.094-31','947.564.740-63','#D011',FALSE,'10/09/2018 07:43:34',null);
+VALUES('071.053.094-31','947.564.740-63','#D011',FALSE,'10/09/2018 17:43:34',null);
 INSERT INTO compartilhamensagem(cpfEnvia,cpfRecebe,codMensagem,visibilidade,dataHoraEnvio,dataHoraVisualizacao)
 VALUES('829.340.194-03','816.582.500-36','#D010',FALSE,'20/09/2018 07:43:34','20/09/2018 08:43:34');
 

@@ -100,3 +100,17 @@ FROM pessoa r, pessoa d, compartilhaMensagem c, mensagem m
 WHERE r.cpf = c.cpfEnvia AND d.cpf=c.cpfREcebe AND c.codMensagem=m.codMensagem AND c.dataHoraVisualizacao IS NOT NULL
 ORDER BY diasEntreDatas(CAST(c.dataHoraEnvio AS DATE),CAST(c.dataHoraVisualizacao AS DATE)) DESC
 
+/*Horario em que as mensagens são compartilhadas*/
+SELECT COUNT(*) AS QuantMensagens,
+	CASE 
+		WHEN (CAST(datahoraenvio AS TIME)<CAST('06:00:00' AS TIME))
+			THEN 'Noite'
+		WHEN (CAST(datahoraenvio AS TIME)<CAST('12:00:00' AS TIME))
+			THEN 'Manhã'
+		WHEN (CAST(datahoraenvio AS TIME)<CAST('18:00:00' AS TIME))
+			THEN 'Tarde'
+		ELSE 'Noite'
+	END AS HORARIO
+FROM compartilhamensagem
+GROUP BY HORARIO
+ORDER BY COUNT(*) DESC

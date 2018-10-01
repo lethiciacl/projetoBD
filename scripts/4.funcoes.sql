@@ -66,9 +66,12 @@ CREATE OR REPLACE FUNCTION proximoCodMensagem() RETURNS mensagem.codMensagem%TYP
 			SELECT MAX(to_number(SUBSTRING(codMensagem FROM 3)::VARCHAR,'000'))+1 
 			INTO prx
 			FROM MENSAGEM;
+			IF(prx IS NULL)THEN
+				prx := 1;
+			END IF;
 			SELECT LPAD(CAST(prx AS VARCHAR),3,'0')
 			INTO cod;
-			cod := '#D'||cod;
+			cod := '#L'||cod;
 			RETURN cod;
 		END
 	$$ LANGUAGE PLPGSQL;
