@@ -98,7 +98,7 @@ SELECT r.Nome AS Remetente,d.Nome As Destinatario, m.texto AS Mensagem,
 diasEntreDatas(CAST(c.dataHoraEnvio AS DATE),CAST(c.dataHoraVisualizacao AS DATE)) AS DemoraDias
 FROM pessoa r, pessoa d, compartilhaMensagem c, mensagem m
 WHERE r.cpf = c.cpfEnvia AND d.cpf=c.cpfREcebe AND c.codMensagem=m.codMensagem AND c.dataHoraVisualizacao IS NOT NULL
-ORDER BY diasEntreDatas(CAST(c.dataHoraEnvio AS DATE),CAST(c.dataHoraVisualizacao AS DATE)) DESC
+ORDER BY diasEntreDatas(CAST(c.dataHoraEnvio AS DATE),CAST(c.dataHoraVisualizacao AS DATE)) DESC;
 
 /*Horario em que as mensagens são compartilhadas*/
 SELECT COUNT(*) AS QuantMensagens,
@@ -113,4 +113,12 @@ SELECT COUNT(*) AS QuantMensagens,
 	END AS HORARIO
 FROM compartilhamensagem
 GROUP BY HORARIO
-ORDER BY COUNT(*) DESC
+ORDER BY COUNT(*) DESC;
+
+/*Relacionar o 3 primeiro colocado no simulado de Geografia*/
+SELECT acontecimento.nome, visaoAlunoPessoa.nome AS Aluno, nota, *
+FROM (avaliacao NATURAL JOIN resultadoavaliacao) NATURAL JOIN acontecimento, VisaoAlunoPessoa
+
+WHERE tipo='Simulado'  AND acontecimento.nome = 'Simulado de Geografia' AND cpfaluno = cpf
+ORDER BY codacontecimento, nota DESC
+LIMIT(3);

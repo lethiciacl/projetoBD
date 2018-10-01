@@ -225,9 +225,9 @@ VALUES('#006','Avaliação de Matemática','13/09/2018','11:00','12:05','Sala-01
 INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
 VALUES('#007','Avaliação de Português','18/09/2018','07:00','09:15','Sala-02');
 INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
-VALUES('#008','Avaliação de Geografia', '20/09/2018','08:30','09:15','Sala-01');
+VALUES('#008','Simulado de Geografia', '20/09/2018','08:30','09:15','Sala-01');
 INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
-VALUES('#009','Avaliação de Inglês','12/09/2018','09:30','11:00','Sala-02');
+VALUES('#009','Simulado de Inglês','12/09/2018','09:30','11:00','Sala-02');
 INSERT INTO acontecimento(codAcontecimento,nome,data,horarioInicio,horarioFim,local) 
 VALUES('#010','Avaliação de Espanhol','14/09/2018','10:45','12:05','Sala 01');
 
@@ -294,9 +294,9 @@ VALUES('#AA01',1,'Prova','#006');
 INSERT INTO avaliacao(codDiario,numero,tipo,codAcontecimento)
 VALUES('#AA01',1,'Prova','#007');
 INSERT INTO avaliacao(codDiario,numero,tipo,codAcontecimento)
-VALUES('#AA03',1,'Prova','#008');
+VALUES('#AA03',1,'Simulado','#008');
 INSERT INTO avaliacao(codDiario,numero,tipo,codAcontecimento)
-VALUES('#AA03',1,'Prova','#009');
+VALUES('#AA03',1,'Simulado','#009');
 INSERT INTO avaliacao(codDiario,numero,tipo,codAcontecimento)
 VALUES('#AA02',1,'Prova','#010');
 
@@ -316,15 +316,15 @@ VALUES('#010','Préterito pluscuamperfecto');
 /*resultadoavaliação*/
 
 INSERT INTO resultadoavaliacao(cpfAluno,codAcontecimento,nota)
-VALUES('537.759.154-27','#006',8.2);
+VALUES('537.759.154-27','#008',8.2);
 INSERT INTO resultadoavaliacao(cpfAluno,codAcontecimento,nota)
-VALUES('003.962.124-33','#007',9.3);
+VALUES('003.962.124-33','#008',9.3);
 INSERT INTO resultadoavaliacao(cpfAluno,codAcontecimento,nota)
 VALUES('963.234.750-14','#008',9.9);
 INSERT INTO resultadoavaliacao(cpfAluno,codAcontecimento,nota)
 VALUES('358.595.280-19','#009',9.1);
 INSERT INTO resultadoavaliacao(cpfAluno,codAcontecimento,nota)
-VALUES('236.717.500-49','#010',10.0);
+VALUES('236.717.500-49','#009',10.0);
 
 /*evento*/
 
